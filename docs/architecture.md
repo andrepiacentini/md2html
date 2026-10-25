@@ -18,6 +18,7 @@ modules (`cli` and `output`) perform I/O.
 | `cli.py` | Parses arguments, reads the input, decides the destination, wires the other modules, maps errors to exit codes. No conversion logic. |
 | `converter.py` | Builds the markdown-it parser (`create_parser`), walks the token tree to rewrite URLs, renders the HTML fragment and finds the title. `render_document` is the public entry point. |
 | `links.py` | `LinkResolver`: decides whether a URL is local and relative, and rewrites it for the output location (relative path, `file://` URI or `data:` URI). Also rewrites `src`/`href` in raw HTML. |
+| `alerts.py` | markdown-it plugin for GitHub alerts (`> [!NOTE]`…): turns qualifying blockquotes into `markdown-alert` callouts before inline parsing. |
 | `highlight.py` | Pygments highlighting for fenced code, and the matching light/dark CSS. |
 | `page.py` | Fills `assets/page.html` with the title, theme, CSS (`assets/style.css` + Pygments CSS) and body. |
 | `output.py` | Writes the page to a chosen path or to a temporary file, and opens it with `webbrowser`. |
