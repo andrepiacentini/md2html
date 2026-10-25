@@ -1,0 +1,44 @@
+name: Bug report
+description: Something renders wrong, or the command fails.
+labels: ["bug", "triage"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: markdown
+    attributes:
+      label: Minimal Markdown to reproduce
+      description: The smallest Markdown snippet that shows the problem.
+      render: markdown
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Command
+      placeholder: md2html notes.md --save
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Error output or screenshot
+  - type: input
+    id: version
+    attributes:
+      label: md2html version
+      description: Output of `md2html --version`.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: OS, Python version and browser
+      placeholder: macOS 15, Python 3.13, Firefox 140
+    validations:
+      required: true
