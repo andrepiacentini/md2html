@@ -7,7 +7,7 @@ are a good place to start.
 
 ## Rendering fidelity
 
-- [ ] **GitHub alerts** ([#1](https://github.com/andrepiacentini/md2html/issues/1)) — `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`,
+- [x] **GitHub alerts** ([#1](https://github.com/andrepiacentini/md2html/issues/1)) — `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`,
       `> [!CAUTION]` rendered as styled callouts.
 - [ ] **Emoji shortcodes** ([#2](https://github.com/andrepiacentini/md2html/issues/2)) — `:tada:` → 🎉.
 - [ ] **Math** ([#3](https://github.com/andrepiacentini/md2html/issues/3)) — `$inline$` and `$$block$$` (needs an ADR: server-side rendering vs. a

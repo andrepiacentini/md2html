@@ -9,6 +9,8 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- GitHub alerts: `> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]` and `[!CAUTION]`
+  blockquotes render as colored callouts with icons, matching GitHub's HTML (#1).
 - `md2html FILE` command that renders Markdown to a self-contained HTML page and opens it
   in the default browser, through a temporary file by default.
 - `--save` and `--output` to keep the generated page; `-` to read from stdin.

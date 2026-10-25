@@ -53,6 +53,10 @@ When reading from stdin, relative paths are resolved from the current directory.
 - CommonMark, plus the GitHub extensions: tables (with column alignment), task lists,
   strikethrough, and autolinked URLs.
 - Footnotes (`text[^1]` … `[^1]: note`).
+- [Alerts](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts):
+  a top-level blockquote whose first line is `[!NOTE]`, `[!TIP]`, `[!IMPORTANT]`,
+  `[!WARNING]` or `[!CAUTION]` (alone on the line) becomes a colored callout with an icon,
+  as on GitHub. Nested or empty alerts stay plain blockquotes, as on GitHub.
 - Fenced code blocks with syntax highlighting for every language
   [Pygments](https://pygments.org/languages/) knows; unknown languages are shown as plain
   text.
@@ -80,5 +84,5 @@ PDF.
 
 ## Limitations
 
-See the [roadmap](roadmap.md) for features not supported yet, such as GitHub alerts
-(`> [!NOTE]`), math and Mermaid diagrams.
+See the [roadmap](roadmap.md) for features not supported yet, such as math and Mermaid
+diagrams.

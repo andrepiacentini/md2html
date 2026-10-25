@@ -18,6 +18,7 @@ from mdit_py_plugins.footnote import footnote_plugin
 from mdit_py_plugins.front_matter import front_matter_plugin
 from mdit_py_plugins.tasklists import tasklists_plugin
 
+from md2html.alerts import alerts_plugin
 from md2html.highlight import highlight_code
 from md2html.links import LinkResolver
 from md2html.page import build_page
@@ -58,6 +59,7 @@ def create_parser() -> MarkdownIt:
     md.use(footnote_plugin)
     md.use(tasklists_plugin)
     md.use(anchors_plugin, max_level=6)
+    md.use(alerts_plugin)
     return md
 
 

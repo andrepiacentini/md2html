@@ -16,6 +16,7 @@ and which module owns each step.
 src/md2html/
   cli.py         argument parsing and orchestration (no conversion logic)
   converter.py   markdown-it parser setup, URL rewriting walk, title detection
+  alerts.py      markdown-it plugin: GitHub alerts (> [!NOTE]…)
   links.py       LinkResolver: relative URL → URL valid from the output location
   highlight.py   Pygments code highlighting and its CSS
   page.py        final page from assets/page.html + assets/style.css
