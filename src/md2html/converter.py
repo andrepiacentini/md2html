@@ -22,6 +22,7 @@ from md2html.alerts import alerts_plugin
 from md2html.highlight import highlight_code
 from md2html.links import LinkResolver
 from md2html.page import build_page
+from md2html.toc import toc_plugin
 
 Theme = Literal["auto", "light", "dark"]
 
@@ -37,6 +38,7 @@ class RenderOptions:
         embed_images: Inline local images as ``data:`` URIs.
         theme: Color scheme of the page.
         title: Page title; defaults to the first level-1 heading.
+        toc: Insert a table of contents (see :mod:`md2html.toc`).
     """
 
     source_dir: Path = field(default_factory=Path.cwd)
@@ -44,6 +46,7 @@ class RenderOptions:
     embed_images: bool = False
     theme: Theme = "auto"
     title: str | None = None
+    toc: bool = False
 
 
 @dataclass(frozen=True)
@@ -52,7 +55,7 @@ class RenderedBody:
     title: str | None
 
 
-def create_parser() -> MarkdownIt:
+def create_parser(*, toc: bool = False) -> MarkdownIt:
     """Build the markdown-it parser with the GFM-like feature set."""
     md = MarkdownIt("gfm-like", {"html": True, "highlight": highlight_code})
     md.use(front_matter_plugin)
@@ -60,12 +63,14 @@ def create_parser() -> MarkdownIt:
     md.use(tasklists_plugin)
     md.use(anchors_plugin, max_level=6)
     md.use(alerts_plugin)
+    if toc:
+        md.use(toc_plugin)
     return md
 
 
-def render_body(markdown: str, resolver: LinkResolver) -> RenderedBody:
+def render_body(markdown: str, resolver: LinkResolver, *, toc: bool = False) -> RenderedBody:
     """Render ``markdown`` to an HTML fragment, rewriting its relative URLs."""
-    md = create_parser()
+    md = create_parser(toc=toc)
     env: dict[str, object] = {}
     tokens = md.parse(markdown, env)
     _rewrite_urls(tokens, resolver)
@@ -83,7 +88,7 @@ def render_document(
         output_dir=options.output_dir,
         embed_images=options.embed_images,
     )
-    body = render_body(markdown, resolver)
+    body = render_body(markdown, resolver, toc=options.toc)
     title = options.title or body.title or fallback_title
     return build_page(body=body.html, title=title, theme=options.theme)
 

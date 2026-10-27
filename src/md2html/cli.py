@@ -56,6 +56,9 @@ def build_parser() -> argparse.ArgumentParser:
         help="inline local images in the HTML, so the file works on its own",
     )
     parser.add_argument("--title", help="page title (default: first level-1 heading)")
+    parser.add_argument(
+        "--toc", action="store_true", help="add a table of contents (headings down to level 3)"
+    )
     parser.add_argument("-V", "--version", action="version", version=f"%(prog)s {__version__}")
     return parser
 
@@ -89,6 +92,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         embed_images=args.embed_images,
         theme=cast(Theme, args.theme),
         title=args.title,
+        toc=args.toc,
     )
     html = render_document(markdown, options, fallback_title=stem)
 

@@ -9,6 +9,7 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- `--toc` adds a table of contents built from the headings down to level 3 (#9).
 - GitHub alerts: `> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]` and `[!CAUTION]`
   blockquotes render as colored callouts with icons, matching GitHub's HTML (#1).
 - `md2html FILE` command that renders Markdown to a self-contained HTML page and opens it

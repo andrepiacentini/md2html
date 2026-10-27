@@ -22,8 +22,8 @@ test: ## Run the test suite
 coverage: ## Run the tests with a coverage report
 	uv run pytest --cov --cov-report=term-missing
 
-demo: ## Render examples/sample.md and open it in the browser
-	uv run md2html examples/sample.md
+demo: ## Render examples/sample.md (with --toc) and open it in the browser
+	uv run md2html examples/sample.md --toc
 
 build: ## Build the sdist and wheel into dist/
 	uv build

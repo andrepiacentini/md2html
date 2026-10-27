@@ -2,7 +2,7 @@
 
 ```text
 md2html [-h] [-o PATH | -s] [--no-open] [--theme {auto,light,dark}]
-        [--embed-images] [--title TITLE] [-V] FILE
+        [--embed-images] [--title TITLE] [--toc] [-V] FILE
 ```
 
 `FILE` is a Markdown file (UTF-8), or `-` to read from standard input.
@@ -66,6 +66,15 @@ When reading from stdin, relative paths are resolved from the current directory.
 - YAML front matter at the top of the file is hidden.
 
 The page title is the first level-1 heading, then the file name. `--title` overrides both.
+
+## Table of contents
+
+`--toc` adds a "Contents" box listing the document's headings down to level 3 (`###`),
+nested by level, each linking to its section. If the document starts with a level-1
+heading, that heading is treated as the title: it is not listed, and the table of contents
+is placed right below it. Otherwise the table of contents goes at the top of the page.
+Headings inside blockquotes, alerts or lists are not listed. Documents without such headings
+get no table of contents.
 
 ## Themes
 
