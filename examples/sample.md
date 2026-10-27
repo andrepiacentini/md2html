@@ -10,6 +10,8 @@ A tour of what `md2html` renders. Try it: `md2html examples/sample.md`.
 
 ## Text
 
+Emoji shortcodes work as on GitHub :tada: :rocket: :+1:.
+
 Paragraphs with **bold**, *italic*, ~~strikethrough~~, `inline code`, <kbd>Ctrl</kbd>+<kbd>C</kbd>
 and an autolink: https://github.com/andrepiacentini/md2html. Jump to the [tables](#tables)
 or read the [usage guide](../docs/usage.md).

@@ -62,7 +62,7 @@ select = ["E", "W", "F", "I", "B", "UP", "SIM", "RUF", "PTH"]
 [tool.mypy]
 python_version = "3.11"
 strict = true
-files = ["src"]
+files = ["src", "scripts"]
 
 [[tool.mypy.overrides]]
 module = ["mdit_py_plugins.*"]

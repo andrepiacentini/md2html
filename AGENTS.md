@@ -18,12 +18,14 @@ src/md2html/
   converter.py   markdown-it parser setup, URL rewriting walk, title detection
   alerts.py      markdown-it plugin: GitHub alerts (> [!NOTE]…)
   toc.py         markdown-it plugin: table of contents (--toc)
+  emoji.py       markdown-it plugin: emoji shortcodes (data in assets/emoji.json)
   links.py       LinkResolver: relative URL → URL valid from the output location
   highlight.py   Pygments code highlighting and its CSS
   page.py        final page from assets/page.html + assets/style.css
   output.py      writing files (temporary or permanent) and opening the browser
 tests/           pytest, one test module per source module
 docs/            user and contributor documentation, ADRs in docs/adr/
+scripts/         maintenance scripts (not shipped), e.g. update_emoji.py
 ```
 
 ## Commands
