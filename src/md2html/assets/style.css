@@ -99,6 +99,26 @@ h4 { font-size: 1em; }
 h5 { font-size: 0.875em; }
 h6 { font-size: 0.85em; color: var(--fg-muted); }
 
+/* Heading permalinks: GitHub's link icon, shown on hover or keyboard focus */
+.markdown-heading { position: relative; }
+.markdown-heading .anchor {
+  position: absolute;
+  top: 50%;
+  left: -28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(-50%);
+}
+.markdown-heading:hover .anchor,
+.markdown-heading .anchor:focus { opacity: 1; }
+.markdown-heading .anchor svg { fill: var(--fg-muted); }
+.markdown-body > .markdown-heading:first-child > :first-child { margin-top: 0 !important; }
+
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -245,4 +265,5 @@ hr.footnotes-sep { display: none; }
   :root { --bg: #ffffff; --fg: #000000; }
   .markdown-body { max-width: none; padding: 0; }
   pre, blockquote, table, img { page-break-inside: avoid; }
+  .markdown-heading .anchor { display: none; }
 }

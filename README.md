@@ -20,7 +20,7 @@ working, code is highlighted, and nothing is fetched from the internet.
 
 - **Faithful rendering** — GitHub Flavored Markdown: tables, task lists, strikethrough,
   autolinks, footnotes, alerts (`> [!NOTE]`), emoji shortcodes (`:tada:`), fenced code with
-  syntax highlighting, raw HTML and heading anchors.
+  syntax highlighting, raw HTML and heading permalinks.
 - **Images and links that work** — relative paths are resolved from the Markdown file's
   location, wherever the HTML ends up. `--embed-images` produces a single portable file.
 - **Temporary or permanent** — preview through a temporary file (default), or keep the

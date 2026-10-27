@@ -14,6 +14,8 @@ from markdown_it import MarkdownIt
 from markdown_it.rules_core import StateCore
 from markdown_it.token import Token
 
+from md2html.tokens import plain_text
+
 MAX_LEVEL = 3
 
 
@@ -57,14 +59,8 @@ def _entries(tokens: list[Token], *, skip_until: int) -> list[_Entry]:
         level = int(token.tag[1:])
         anchor = token.attrGet("id")
         if level <= MAX_LEVEL and isinstance(anchor, str):
-            entries.append(_Entry(level, anchor, _plain_text(tokens[index + 1])))
+            entries.append(_Entry(level, anchor, plain_text(tokens[index + 1])))
     return entries
-
-
-def _plain_text(inline: Token) -> str:
-    return "".join(
-        child.content for child in inline.children or [] if child.type in ("text", "code_inline")
-    )
 
 
 def _render(entries: list[_Entry]) -> str:

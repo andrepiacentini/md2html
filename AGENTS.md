@@ -19,6 +19,8 @@ src/md2html/
   alerts.py      markdown-it plugin: GitHub alerts (> [!NOTE]…)
   toc.py         markdown-it plugin: table of contents (--toc)
   emoji.py       markdown-it plugin: emoji shortcodes (data in assets/emoji.json)
+  permalinks.py  markdown-it plugin: heading permalinks (link icon on hover)
+  tokens.py      helpers shared by the plugins
   links.py       LinkResolver: relative URL → URL valid from the output location
   highlight.py   Pygments code highlighting and its CSS
   page.py        final page from assets/page.html + assets/style.css

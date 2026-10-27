@@ -23,7 +23,9 @@ from md2html.emoji import emoji_plugin
 from md2html.highlight import highlight_code
 from md2html.links import LinkResolver
 from md2html.page import build_page
+from md2html.permalinks import permalinks_plugin
 from md2html.toc import toc_plugin
+from md2html.tokens import plain_text
 
 Theme = Literal["auto", "light", "dark"]
 
@@ -67,6 +69,7 @@ def create_parser(*, toc: bool = False) -> MarkdownIt:
     md.use(alerts_plugin)
     if toc:
         md.use(toc_plugin)
+    md.use(permalinks_plugin)  # after toc: it relies on heading positions
     return md
 
 
@@ -119,11 +122,5 @@ def _rewrite_urls(tokens: list[Token], resolver: LinkResolver) -> None:
 def _first_h1(tokens: list[Token]) -> str | None:
     for index, token in enumerate(tokens):
         if token.type == "heading_open" and token.tag == "h1":
-            inline = tokens[index + 1]
-            text = "".join(
-                child.content
-                for child in inline.children or []
-                if child.type in ("text", "code_inline")
-            )
-            return text.strip() or None
+            return plain_text(tokens[index + 1]).strip() or None
     return None
