@@ -57,6 +57,9 @@ When reading from stdin, relative paths are resolved from the current directory.
   a top-level blockquote whose first line is `[!NOTE]`, `[!TIP]`, `[!IMPORTANT]`,
   `[!WARNING]` or `[!CAUTION]` (alone on the line) becomes a colored callout with an icon,
   as on GitHub. Nested or empty alerts stay plain blockquotes, as on GitHub.
+- Emoji shortcodes, with GitHub's names: `:tada:` → 🎉, `:+1:` → 👍. Names are
+  case-sensitive, and shortcodes in code, in image alt text or glued to a preceding letter or
+  digit (`a:tada:`) stay as text. GitHub's image-only emoji such as `:octocat:` stay as text.
 - Fenced code blocks with syntax highlighting for every language
   [Pygments](https://pygments.org/languages/) knows; unknown languages are shown as plain
   text.

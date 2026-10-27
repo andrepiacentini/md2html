@@ -59,6 +59,16 @@ Compare with how GitHub renders the same file. Attach before/after screenshots t
 - Keep runtime dependencies few and pure Python. A new runtime dependency needs an ADR.
 - Dependabot opens monthly grouped updates for Python packages and GitHub Actions.
 
+## Updating vendored data
+
+Emoji shortcodes come from GitHub's [gemoji](https://github.com/github/gemoji) database,
+vendored in `src/md2html/assets/emoji.json` (see ADR 0002). To pick up new emoji, run the
+script with a newer gemoji commit and commit the regenerated file:
+
+```console
+uv run python scripts/update_emoji.py <gemoji-commit>
+```
+
 ## Releasing
 
 Releases are published to PyPI by `.github/workflows/release.yml` when a `v*` tag is pushed,

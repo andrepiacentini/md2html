@@ -11,3 +11,4 @@ after acceptance; a new ADR supersedes an old one and both are updated to say so
 | ADR | Title | Status |
 | --- | --- | --- |
 | [0001](0001-markdown-it-py-as-parser.md) | markdown-it-py as the Markdown parser | accepted |
+| [0002](0002-vendor-gemoji-for-emoji-shortcodes.md) | Vendor GitHub's gemoji data for emoji shortcodes | accepted |

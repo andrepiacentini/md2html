@@ -9,7 +9,7 @@ are a good place to start.
 
 - [x] **GitHub alerts** ([#1](https://github.com/andrepiacentini/md2html/issues/1)) — `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`,
       `> [!CAUTION]` rendered as styled callouts.
-- [ ] **Emoji shortcodes** ([#2](https://github.com/andrepiacentini/md2html/issues/2)) — `:tada:` → 🎉.
+- [x] **Emoji shortcodes** ([#2](https://github.com/andrepiacentini/md2html/issues/2)) — `:tada:` → 🎉.
 - [ ] **Math** ([#3](https://github.com/andrepiacentini/md2html/issues/3)) — `$inline$` and `$$block$$` (needs an ADR: server-side rendering vs. a
       bundled script).
 - [ ] **Mermaid diagrams** ([#4](https://github.com/andrepiacentini/md2html/issues/4)) — ```` ```mermaid ```` blocks (needs an ADR: requires JavaScript).
