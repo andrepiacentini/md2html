@@ -13,7 +13,7 @@ are a good place to start.
 - [ ] **Math** ([#3](https://github.com/andrepiacentini/md2html/issues/3)) — `$inline$` and `$$block$$` (needs an ADR: server-side rendering vs. a
       bundled script).
 - [ ] **Mermaid diagrams** ([#4](https://github.com/andrepiacentini/md2html/issues/4)) — ```` ```mermaid ```` blocks (needs an ADR: requires JavaScript).
-- [ ] **Heading permalinks** ([#5](https://github.com/andrepiacentini/md2html/issues/5)) — hover anchor icon next to headings, like GitHub.
+- [x] **Heading permalinks** ([#5](https://github.com/andrepiacentini/md2html/issues/5)) — hover anchor icon next to headings, like GitHub.
 
 ## Workflow
 

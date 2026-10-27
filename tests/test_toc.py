@@ -28,6 +28,11 @@ def flat(html: str) -> str:
     return html.replace("\n", "")
 
 
+def nav(html: str) -> str:
+    """Only the table of contents, so heading permalinks do not count as entries."""
+    return html[html.index('<nav class="toc"') : html.index("</nav>")]
+
+
 def test_no_table_of_contents_by_default() -> None:
     assert "toc" not in body(DOC, toc=False)
 
@@ -47,17 +52,17 @@ def test_lists_level_2_and_3_headings_nested() -> None:
 
 
 def test_deeper_headings_are_left_out() -> None:
-    html = body(DOC)
+    toc = nav(body(DOC))
 
-    assert 'href="#with-uv"' in html
-    assert 'href="#deep-detail"' not in html
+    assert 'href="#with-uv"' in toc
+    assert 'href="#deep-detail"' not in toc
 
 
 def test_goes_right_after_the_leading_title() -> None:
     html = body(DOC)
 
     assert html.index("</h1>") < html.index('<nav class="toc"') < html.index("<p>Intro.</p>")
-    assert 'href="#project"' not in html
+    assert 'href="#project"' not in nav(html)
 
 
 def test_goes_at_the_top_without_a_leading_title() -> None:

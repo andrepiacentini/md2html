@@ -9,6 +9,7 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- Heading permalinks: a link icon appears next to headings on hover, as on GitHub (#5).
 - Emoji shortcodes (`:tada:` → 🎉) with GitHub's names, from the gemoji database (#2).
 - `--toc` adds a table of contents built from the headings down to level 3 (#9).
 - GitHub alerts: `> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]` and `[!CAUTION]`

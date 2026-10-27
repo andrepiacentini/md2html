@@ -65,7 +65,7 @@ When reading from stdin, relative paths are resolved from the current directory.
   text.
 - Raw HTML, including `<details>`, `<kbd>`, `<sub>`/`<sup>` and aligned images.
 - Heading anchors: `## Getting started` gets `id="getting-started"`, so `[link](#getting-started)`
-  works.
+  works. As on GitHub, hovering a heading shows a link icon to copy its permalink.
 - YAML front matter at the top of the file is hidden.
 
 The page title is the first level-1 heading, then the file name. `--title` overrides both.
