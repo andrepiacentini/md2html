@@ -60,6 +60,7 @@ cat NOTES.md | md2html -              # read from stdin
 | `--theme {auto,light,dark}` | Color scheme. `auto` follows the system (default). |
 | `--embed-images` | Inline local images as `data:` URIs, so the file works on its own. |
 | `--title TITLE` | Page title. Defaults to the first level-1 heading, then the file name. |
+| `--toc` | Add a table of contents (headings down to level 3) at the top of the page. |
 | `-V, --version` | Show the version. |
 
 The path of the generated file is always printed to stdout, so `md2html` composes with

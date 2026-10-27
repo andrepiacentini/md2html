@@ -144,6 +144,19 @@ blockquote > :last-child { margin-bottom: 0; }
 .markdown-alert-warning { --alert-color: var(--alert-warning); }
 .markdown-alert-caution { --alert-color: var(--alert-caution); }
 
+/* Table of contents (--toc) */
+.toc {
+  margin: 0 0 24px;
+  padding: 12px 16px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-muted);
+  border-radius: 6px;
+}
+.toc-title { margin: 0 0 8px; font-weight: 600; }
+.toc ul { margin: 0; padding-left: 1.25em; }
+.toc > ul { padding-left: 1em; }
+.toc li + li, .toc li > ul { margin-top: 0.15em; }
+
 /* Lists */
 ul, ol { padding-left: 2em; }
 li + li { margin-top: 0.25em; }

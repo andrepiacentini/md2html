@@ -21,7 +21,7 @@ are a good place to start.
 - [ ] **Links between Markdown files** ([#7](https://github.com/andrepiacentini/md2html/issues/7)) — option to render linked `.md` files too and point
       links to their `.html` versions.
 - [ ] **Multiple files** ([#8](https://github.com/andrepiacentini/md2html/issues/8)) — `md2html docs/*.md -o site/`.
-- [ ] **Table of contents** ([#9](https://github.com/andrepiacentini/md2html/issues/9)) — optional generated TOC (`--toc`).
+- [x] **Table of contents** ([#9](https://github.com/andrepiacentini/md2html/issues/9)) — optional generated TOC (`--toc`).
 - [ ] **Custom CSS** ([#10](https://github.com/andrepiacentini/md2html/issues/10)) — `--css my.css` to add or replace styles.
 
 ## Safety

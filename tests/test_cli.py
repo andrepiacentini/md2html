@@ -68,6 +68,15 @@ def test_output_directory_uses_source_name(
     assert (out_dir / "README.html").is_file()
 
 
+def test_toc_option_adds_table_of_contents(tmp_path: Path, opened: list[Path]) -> None:
+    source = tmp_path / "doc.md"
+    source.write_text("# Doc\n\n## Section\n", encoding="utf-8")
+
+    assert cli.main([str(source), "--save", "--toc", "--no-open"]) == cli.EXIT_OK
+
+    assert '<nav class="toc"' in (tmp_path / "doc.html").read_text(encoding="utf-8")
+
+
 def test_reads_from_stdin(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path, opened: list[Path]
 ) -> None:
